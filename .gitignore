@@ -1,0 +1,12 @@
+# Python / Django
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node / React Native
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
