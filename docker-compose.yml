@@ -28,5 +28,17 @@ services:
       - db
       - redis
 
+  flusher:
+    build: ./backend
+    command: python manage.py flush_clicks --interval 5
+    environment:
+      DJANGO_DEBUG: "0"
+      DB_HOST: db
+      DB_PORT: "5432"
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+
 volumes:
   pgdata:
